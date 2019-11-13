@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interface</title>
+    <link rel="stylesheet" href="../static/css/template.css">
+</head>
+
+<body class="index">
+
+    <header>
+        <div class="hwrap">
+            <h1>My room</h1>
+        </div>
+    </header>
+
+    {% extends "template.html" %}
+    {% block content %}
+
+    <div role="main" id="main2">
+        <figure class ="interface-container" id="interface">
+            <script>document.write(width)</script>
+        </figure>
+    <button onclick="myFunction()">Width & Height</button>
+        <p id="demo"></p>
+    </div>
+    <h1 id="sensorheader">
+    {%for i in range(0, len)%}
+        <p id="draggable" class="sensor">&#{{65+i}};</p>
+    {%endfor%}
+    </h1>
+    <table id="table">
+        <th>
+            <tr id="header">
+                <td>Sensor</td>
+                <td>Temperature</td>
+                <td>Light</td>
+                <td>Last updated</td>
+                <td>Date</td>
+            </tr>
+        </th>
+        {%for i in range(0, len)%}
+        <tr>
+            <td>{{s[i]}}</td>
+            <td>{{t[i][0]}}°C</td>
+            <td>{{l[i][0]}}</td>
+            <td>{{ct[i][0]}}</td>
+            <td>{{d[i][0]}}</td>
+
+                </tr>
+        {%endfor%}
+    </table>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        var positions = JSON.parse(localStorage.positions || "{}");
+        $(function () {
+        var d = $("[id=draggable]").attr("id", function (i) {
+            return "draggable_" + i
+        })
+        $.each(positions, function (id, pos) {
+            $("#" + id).css(pos)
+        })
+
+        d.draggable({
+            containment: "#containment-wrapper",
+            scroll: false,
+            stop: function (event, ui) {
+                positions[this.id] = ui.position
+                localStorage.positions = JSON.stringify(positions)
+            }
+        });
+});
+    </script>
+    <script>
+        function myFunction() {
+          var elmnt = document.getElementById("interface");
+          var txt = "";
+          txt += "width: " + elmnt.clientWidth + "\r\n";
+          txt += "height: " + elmnt.clientHeight;
+          document.getElementById("demo").innerHTML = txt;
+        }
+        </script>
+
+        {% endblock %}
+</body>
+
+</html>

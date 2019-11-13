@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interface</title>
+    <link rel="stylesheet" href="../static/css/template.css">
+
+</head>
+
+<body class="index">
+
+    {% extends "template.html" %}
+    {% block content %}
+    {%for i in range(0, s)%}
+    <table>
+            <th>
+                <tr>
+                    <td>&#{{65+i}};</td>
+                </tr>
+            </th>
+            <th>
+                <tr id="header">
+                    <td>Temperature</td>
+                    <td>Light</td>
+                    <td>Time</td>
+                    <td>Date</td>
+                </tr>
+            </th>
+            {%for j in range(0, len)%}
+
+                    <tr>
+                        <td>{{t[i][j]}}°C</td>
+                        <td>{{l[i][j]}}</td>
+                        <td>{{ct[i][j]}}</td>
+                        <td>{{d[i][j]}}</td>
+            {%endfor%}
+
+                    </tr>
+        </table>
+        
+    {%endfor%}
+    {% endblock %}
+</body>
+
+</html>
