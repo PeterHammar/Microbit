@@ -12,8 +12,11 @@ an IDE (I used VSCode for this program)
 Libraries needed:
 
 flask
-serial.tools.list_ports
+
+serial.tools.
+
 mysql.connector
+
 serial
 
 You can install these libraries using pip with the following command in the command line:
