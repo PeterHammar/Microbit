@@ -15,7 +15,7 @@ Libraries needed:
 
 flask
 
-serial.tools.
+serial.tools.list_ports
 
 mysql.connector
 
