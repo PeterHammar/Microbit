@@ -1,13 +1,16 @@
 Project: Microbits by Peter Hammar
+
 This is a program that collects data with microbits and creates a suitable web-based interface that displays your room and the sensors
 in 2D as well as the data collected.
 
 Softwares needed:
+
 Python
 SQL
 an IDE (I used VSCode for this program)
 
 Libraries needed:
+
 flask
 serial.tools.list_ports
 mysql.connector
@@ -17,6 +20,7 @@ You can install these libraries using pip with the following command in the comm
 pip install package-name
 
 Setting up:
+
 1. Connect a microbit to the USB-port on your computer. 
 2. Go to the folder called 'hexfiles'
 3. Drag 'receiver.hex' to your microbit-folder, like you would with any USB-connected device.
