@@ -45,6 +45,7 @@ Running the program:
 2. Type main.py
 The microbits containing the 'sender.hex'-files will transmit radio signals to the microbit connected to the USB-port
 3. Type in http://127.0.0.1:5000/ in your web-browser and you should see the interface
+4. Press either one of button A or B on the microbits to see which microbits has which ID
 
 
 
