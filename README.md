@@ -6,7 +6,9 @@ in 2D as well as the data collected.
 Softwares needed:
 
 Python
+
 SQL
+
 an IDE (I used VSCode for this program)
 
 Libraries needed:
